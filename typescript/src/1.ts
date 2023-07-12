@@ -60,3 +60,24 @@ enum Size {
   Medium,
   Large,
 }
+
+//Type aliases
+type Resizable = {
+    resize: () => void;
+};
+
+type Draggable = { 
+    drag: () => void;
+}
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+    resize: ()=>{},
+    drag: ()=>{}
+};
+
+//Literal Types. Exact/Specific
+type Metric = "cm"| "m"
+let quantity: 20 | 30 = 20;
+let len: Metric = "cm";

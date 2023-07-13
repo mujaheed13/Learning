@@ -8,7 +8,7 @@ function test(x, y) {
 }
 let numbers1 = [1, 2, 3, 4];
 let numbers2 = [1, 2, 3];
-let user = [1, 'name'];
+let user = [1, "name"];
 let employee = {
     firstName: "Mohammad",
     lastName: "Mujaheed",
@@ -17,7 +17,6 @@ let employee = {
         return `FullName is ${this.firstName} ${this.lastName}`;
     },
 };
-console.log(employee.getFullName());
 let union = true;
 union = 354;
 var Size;
@@ -26,3 +25,9 @@ var Size;
     Size[Size["Medium"] = 2] = "Medium";
     Size[Size["Large"] = 3] = "Large";
 })(Size || (Size = {}));
+let textBox = {
+    resize: () => { },
+    drag: () => { }
+};
+let quantity = 20;
+let len = "cm";

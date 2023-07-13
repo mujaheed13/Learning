@@ -3,13 +3,14 @@ import { prisma } from "@/db";
 import Link from "next/link";
 
 async function toggleTodo(id: string, complete: boolean) {
-    "use server"
-    console.log(id, complete)
+  "use server";
+  await prisma.todo.update({ where: { id }, data: { complete } });
+  console.log(id, complete);
 }
 
 export default async function Home() {
   const todos = await prisma.todo.findMany();
-// await prisma.todo.create({data: {title: "test", complete: false}}) 
+  // await prisma.todo.create({data: {title: "test", complete: false}})
   return (
     <>
       <header className="flex justify-between items-center mb-4">
@@ -23,7 +24,7 @@ export default async function Home() {
       </header>
       <ul className="pl-4">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo}/>
+          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
         ))}
       </ul>
     </>

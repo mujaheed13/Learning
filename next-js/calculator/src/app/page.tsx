@@ -1,5 +1,7 @@
 import CalBtn from "@/components/CalBtn";
+import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import Form from "../components/Form"
 
 export default function Home() {
   let btnstxt = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -10,6 +12,8 @@ export default function Home() {
           <CalBtn btnTxt={txt.toString()} />
         ))}
       </div>
+      <ContactForm/>
+          <Form/>
     </>
   );
 }

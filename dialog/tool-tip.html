@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Tooltip</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      #box {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10vh 20vw;
+      }
+
+      #box > div {
+        background-color: teal;
+        color: aliceblue;
+        padding: 15px;
+        border-radius: 10px;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      span {
+        visibility: hidden;
+        position: absolute;
+        background-color: rgba(71, 71, 71, 0.772);
+        padding: 10px;
+        opacity: 0;
+        transition: 0.5s;
+        border-radius: 5px;
+      }
+
+      #box > div:nth-child(1) > span {
+        top: 6px;
+        left: -100%;
+      }
+
+      #box > div:nth-child(2) > span {
+        top: -100%;
+        left: 6px;
+      }
+
+      #box > div:nth-child(3) > span {
+        bottom: -100%;
+        left: 6px;
+      }
+
+      #box > div:nth-child(4) > span {
+        top: 6px;
+        right: -70px;
+      }
+
+      #box > div:hover span {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #box > div:nth-child(1):hover {
+        transform: translate(-10px, 0);
+      }
+
+      #box > div:nth-child(2):hover {
+        transform: translate(0, -10px);
+      }
+
+      #box > div:nth-child(3):hover {
+        transform: translate(0, 10px);
+      }
+
+      #box > div:nth-child(4):hover {
+        transform: translate(10px, 0);
+      }
+
+      #box > div:nth-child(1) > span::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent
+          rgba(71, 71, 71, 0.772);
+      }
+
+      #box > div:nth-child(2) > span::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgba(71, 71, 71, 0.772) transparent transparent
+          transparent;
+      }
+
+      #box > div:nth-child(3) > span::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        margin-right: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent rgba(71, 71, 71, 0.772)
+          transparent;
+      }
+
+      #box > div:nth-child(4) > span::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent rgba(71, 71, 71, 0.772) transparent
+          transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS ToolTip</h1>
+    <div id="box">
+      <div>Left <span>Left</span></div>
+
+      <div>Top <span>Top</span></div>
+      <div>Bottom <span>Bottom</span></div>
+      <div>Right <span>Right</span></div>
+    </div>
+  </body>
+</html>
